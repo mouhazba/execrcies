@@ -23,32 +23,27 @@ class Solution(object):
         :rtype: int
         """
         if 1<= len(nums1) & len(nums2)<=500:
-            pass
+            i, j, nb = 0, 0, 0
+            if 1<= nums1[i] & nums2[j]<=2000:
+                while i < len(nums1):
+                    while j < len(b) and nums1[i] != nums2[j]:
+                        j += 1
 
+                    if j < len(nums2):
+                        nb += 1
+                        if i != j:
+                            i = j
+                        else:
+                            i += 1
+                    else:
+                        i += 1
 
-#a = [2,5,1,2,5]
-#b = [10,5,2,1,5,2]
-a = [1,4,2]
-b = [1,4,2]
-i,j,nb =0,0,0
-while i < len(a):
-    print("i =", i)
-    while j<len(b) and a[i] != b[j]:
-        print("j quand a[i] != a[j]",j)
-        j += 1
+        print("tables", nums1,nums2)
+        print("solution nb_line  ", nb)
 
-    if j< len(b):
-        nb += 1
-        print("j quand a[i] == a[j]",j)
-        print("nb  ",nb)
-        print("*********************")
-        if i != j:
-            i = j
-        else:
-            i += 1
-    else:
-        i += 1
-
-
-#s = Solution()
-#s.maxUncrossedLines(a,b)
+a = [2,5,1,2,5]
+b = [10,5,2,1,5,2]
+#a = [1,4,2]
+#b = [1,4,2]
+s = Solution()
+s.maxUncrossedLines(a,b)
